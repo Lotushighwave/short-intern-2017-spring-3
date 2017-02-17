@@ -1,15 +1,34 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>練習</title>
-        <script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/jquery-2.2.4.min.js"></script>
         <script src="js/index.js"></script>
     </head>
     <body>
-        <button type="button" name="ボタン" class="toggle">隠す</button>
+   	<button type="button" name="ボタン" class="toggle">隠す</button>
         <h1 class="toggled">
             こんにちは。
         </h1>
+	<script>
+	$(function(){
+		var num = 0;
+		$('button').click(function(){
+			$('h1').toggle(100);
+
+			$(this).data("click", ++num);
+			var click = $(this).data("click");
+			if(click % 2== 1){
+			$('button').text("見せる");
+			}else{
+			$('button').text("隠す");
+			}
+		});
+	
+	
+	});
+
+	</script>
     </body>
 </html>
